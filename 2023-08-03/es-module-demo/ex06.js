@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 
 console.log('start of ex06 execution');
-const filename = 'package.json';
+const filename = 'package22.json';
 // task: check if the filename exists
 // and if yes, then read the content, convert the same in to uppercase, and write it to a new file
 fs.access(filename, (err) => {
