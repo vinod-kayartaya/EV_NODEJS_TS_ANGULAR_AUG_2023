@@ -1,0 +1,6 @@
+GET /api/customers
+Host: localhost:8080
+Accept: application/json
+
+###
+
