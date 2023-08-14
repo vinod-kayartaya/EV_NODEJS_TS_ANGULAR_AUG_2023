@@ -4,6 +4,7 @@ import {
   addNewCustomer,
   getAllCustomers,
   getOneCustomer,
+  mergeCustomerData,
 } from './service/customer-service.js';
 
 const app = express();
@@ -20,7 +21,7 @@ app.get(baseUrl + '/:id', getOneCustomer);
 
 // UPDATE
 app.put(baseUrl + '/:id', (req, resp) => resp.send('not done yet..'));
-app.patch(baseUrl + '/:id', (req, resp) => resp.send('not done yet..'));
+app.patch(baseUrl + '/:id', mergeCustomerData);
 
 // DELETE
 app.delete(baseUrl + '/:id', (req, resp) => resp.send('not done yet..'));

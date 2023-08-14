@@ -5,6 +5,30 @@ const client = new MongoClient(url);
 const dbName = 'vindb';
 const collectionName = 'customers';
 
+export const mergeCustomerData = async (req, resp) => {
+  try {
+    const data = req.body;
+    const { id } = req.params;
+
+    await client.connect();
+    const db = client.db(dbName);
+    const customers = db.collection(collectionName);
+    const result = await customers.findOne({ _id: new ObjectId(id) });
+    if (!result) {
+      resp.status(404);
+      resp.json({ message: `no data found for id ${id}` });
+      return;
+    }
+
+    const newData = { ...result, ...data }; // merge result and data into a single object
+    await customers.findOneAndReplace({ _id: new ObjectId(id) }, newData);
+    resp.json(newData);
+  } catch (error) {
+    resp.status(400);
+    resp.json({ error });
+  }
+};
+
 export const getAllCustomers = async (req, resp) => {
   try {
     let { _page = 1, _limit = 10 } = req.query;
