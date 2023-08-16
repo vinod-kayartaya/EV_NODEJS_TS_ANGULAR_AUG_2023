@@ -1,0 +1,81 @@
+GET /api/customers
+Host: localhost:8080
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2NGRjNTE1MDI3MTFmYTc5MDQ5Y2M1NmQiLCJuYW1lIjoiVmlub2QgS3VtYXIgS2F5YXJ0YXlhIiwiZW1haWwiOiJ2aW5vZEB2aW5vZC5jbyIsImlhdCI6MTY5MjE2MDM1MCwiZXhwIjoxNjkyMTY3NTUwfQ.5LEefNu8oEwEh4GFehdeUteBoP53K7NqXiXvnL-IESE
+###
+GET /api/customers/64d9a8d5992f07816497834e
+Host: localhost:8080
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI2NGQ5YzBjNjc4NGU3M2JjZTE2Y2RhOGQiLCJuYW1lIjoiS2lzaG9yZSBLdW1hciIsImVtYWlsIjoia2lzaG9yZWt1bWFyQHhtcGwuY29tIiwiaWF0IjoxNjkyMTYwMTk5LCJleHAiOjE2OTIxNjczOTl9.3VvuvkBAHjWHnurpLrQBXxyWyORrYHV__Hbi90Kmph0
+
+###
+POST /api/customers
+Host: localhost:8080
+Accept: application/json
+Content-Type: application/json
+
+{
+  "first_name": "Kishore",
+  "last_name": "Kumar",
+  "gender": "Male",
+  "email": "KISHORE_KUMAR@YAHOO.CO.IN",
+  "phone": "9876509000"
+}
+###
+PATCH /api/customers/64d9a8d5992f07816497834e
+Host: localhost:8080
+Accept: application/json
+Content-Type: application/json
+
+{
+    "city": "Vascodagama",
+    "state": "Goa",
+    "email": "kishore.kumar@example.com"
+}
+###
+PATCH /api/customers/64d9a8d5992f07816497834e
+Host: localhost:8080
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "kishorekumar98765@gmail.com",
+    "country": "India",
+    "avatar": "https://robohash.org/reprehenderitnonoptio.png?size=50x50&set=set1"
+}
+###
+
+POST /api/users
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Vinod Kumar Kayartaya",
+  "email": "vinod@vinod.co",
+  "password": "topsecret"
+}
+
+###
+
+POST /api/login
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "vinod@vinod.co",
+  "password": "topsecret"
+}
+
+###
+
+POST /api/login
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "kishorekumar@xmpl.com",
+  "password": "topsecret"
+}
