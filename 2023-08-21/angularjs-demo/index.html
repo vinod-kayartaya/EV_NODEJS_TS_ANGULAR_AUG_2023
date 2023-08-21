@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myMod">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular JS demo</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('myMod', []);
+
+        app.controller("c1", function($scope){
+            $scope.myName = 'vinod'
+            $scope.isLowerCase = true
+            $scope.changeCase = function(){
+                $scope.myName = $scope.isLowerCase? $scope.myName.toUpperCase(): $scope.myName.toLowerCase()
+                $scope.isLowerCase = !$scope.isLowerCase;
+            }
+        })
+    </script>
+</head>
+<body>
+    <h1>Angular JS demo</h1>
+    <hr>
+
+    <div ng-controller="c1">
+        <h3>My name is {{ myName }}</h3>
+        <button ng-click="changeCase()">Change case</button>
+    </div>
+</body>
+</html>
