@@ -1,0 +1,14 @@
+.bi {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.buttons {
+    visibility: hidden;
+    /* display: none; */
+}
+
+.row:hover > .buttons {
+    visibility: visible;
+    /* display: block; */
+}
