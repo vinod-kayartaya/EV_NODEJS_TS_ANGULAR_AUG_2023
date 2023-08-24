@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from 'src/app/model/todo';
 import { TodoService } from 'src/app/service/todo.service';
 
 @Component({
@@ -7,12 +8,26 @@ import { TodoService } from 'src/app/service/todo.service';
   styleUrls: ['./todo-form.component.css'],
 })
 export class TodoFormComponent {
-  taskText: string = '';
+  todo: Todo;
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService) {
+    this.todo = todoService.todoForEdit;
+  }
+
+  submitHandler() {
+    if (this.todo.id) {
+      this.updateTask();
+    } else {
+      this.addTask();
+    }
+    this.todoService.todoForEdit = new Todo();
+  }
 
   addTask() {
-    this.todoService.addTask(this.taskText);
-    this.taskText = '';
+    this.todoService.addTask(this.todo.task);
+  }
+
+  updateTask() {
+    this.todoService.updateTask(this.todo);
   }
 }

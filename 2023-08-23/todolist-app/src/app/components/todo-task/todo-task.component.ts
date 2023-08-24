@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/service/todo.service';
 export class TodoTaskComponent {
   // @Input() decorator tells angular runtime that the value for this member is passed from the parent
   @Input()
-  todo: Todo | undefined;
+  todo: Todo = new Todo();
 
   constructor(private todoService: TodoService) {}
 
@@ -42,5 +42,9 @@ export class TodoTaskComponent {
     if (id) {
       this.todoService.moveTaskDown(id);
     }
+  }
+
+  setTaskForEdit(): void {
+    this.todoService.todoForEdit = this.todo;
   }
 }

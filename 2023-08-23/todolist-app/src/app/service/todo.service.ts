@@ -10,6 +10,7 @@ export class TodoService {
   // dependencies are expressed as parameters in the constructor.
 
   private todos: Todo[];
+  private _todoForEdit: Todo = new Todo();
 
   constructor() {
     this.todos = [
@@ -21,6 +22,17 @@ export class TodoService {
     ];
   }
 
+  set todoForEdit(todoForEdit: Todo) {
+    console.log('recd a todo', todoForEdit);
+    this._todoForEdit.id = todoForEdit.id;
+    this._todoForEdit.completed = todoForEdit.completed;
+    this._todoForEdit.task = todoForEdit.task;
+  }
+
+  get todoForEdit(): Todo {
+    return this._todoForEdit;
+  }
+
   addTask = (task: string) => {
     let id =
       this.todos.length === 0
@@ -29,6 +41,12 @@ export class TodoService {
     let todo: Todo = { id, task, completed: false };
     this.todos.unshift(todo);
   };
+
+  updateTask(todo: Todo) {
+    let index = this.todos.findIndex((t) => t.id === todo.id);
+    this.todos[index] = { ...todo };
+    this._todoForEdit = new Todo();
+  }
 
   toggleTaskStatus = (id: number): void => {
     let todo = this.todos.find((t) => t.id === id);

@@ -1,10 +1,12 @@
-<form (submit)="addTask()">
+<form (submit)="submitHandler()">
     <!-- input[autofocus][type=text][placeholder='what do you want to do?'].form-control -->
     <input 
-        [(ngModel)]="taskText"
+        [(ngModel)]="todo.task"
         name="taskText"
         type="text" 
         autofocus
         placeholder="what do you want to do?" 
         class="form-control">
 </form>
+
+{{ todo | json }}
