@@ -1,0 +1,5 @@
+<div class="row mt-3">
+    <div class="col-3" *ngFor="let m of movieService.movieList">
+        <img class="img-thumbnail" [src]="m.Poster" [alt]="m.Title">
+    </div>
+</div>
