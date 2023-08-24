@@ -6,6 +6,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoTaskComponent } from './components/todo-task/todo-task.component';
+import { TodoSummaryComponent } from './components/todo-summary/todo-summary.component';
+import { TodoFormComponent } from './components/todo-form/todo-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,10 +16,13 @@ import { TodoTaskComponent } from './components/todo-task/todo-task.component';
     HeaderComponent,
     FooterComponent,
     TodoListComponent,
-    TodoTaskComponent
+    TodoTaskComponent,
+    TodoSummaryComponent,
+    TodoFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

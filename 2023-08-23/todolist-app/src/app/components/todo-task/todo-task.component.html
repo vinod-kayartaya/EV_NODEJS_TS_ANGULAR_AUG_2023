@@ -1,11 +1,15 @@
 <div class="row">
     <div class="col-9">
-        {{ todo?.task }}
+        <span class="clickable"
+        [ngClass] = "{'strike': todo?.completed, 'text-danger': todo?.completed, 'text-primary': !todo?.completed}"
+        (click)="toggleTaskStatus()">
+            {{ todo?.task }}
+        </span>
     </div>
     <div class="col-3 buttons">
-        <i class="bi bi-trash"></i>
-        <i class="bi bi-pencil"></i>
-        <i class="bi bi-arrow-up"></i>
-        <i class="bi bi-arrow-down"></i>
+        <i (click)="deleteTask()" class="clickable bi bi-trash text-danger"></i>
+        <i class="clickable bi bi-pencil text-primary"></i>
+        <i (click)="moveTaskUp()" class="clickable bi bi-arrow-up"></i>
+        <i (click)="moveTaskDown()" class="clickable bi bi-arrow-down"></i>
     </div>
 </div>

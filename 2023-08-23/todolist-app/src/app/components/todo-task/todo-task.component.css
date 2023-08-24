@@ -1,6 +1,5 @@
 .bi {
     padding: 5px;
-    cursor: pointer;
 }
 
 .buttons {
@@ -11,4 +10,12 @@
 .row:hover > .buttons {
     visibility: visible;
     /* display: block; */
+}
+
+/* custom classes */
+.clickable {
+    cursor: pointer;
+}
+.strike {
+    text-decoration: line-through;
 }

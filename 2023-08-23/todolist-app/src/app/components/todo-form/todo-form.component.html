@@ -1,0 +1,10 @@
+<form (submit)="addTask()">
+    <!-- input[autofocus][type=text][placeholder='what do you want to do?'].form-control -->
+    <input 
+        [(ngModel)]="taskText"
+        name="taskText"
+        type="text" 
+        autofocus
+        placeholder="what do you want to do?" 
+        class="form-control">
+</form>
