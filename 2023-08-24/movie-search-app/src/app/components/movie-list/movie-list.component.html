@@ -1,5 +1,18 @@
-<div class="row mt-3">
+<div class="row mt-3" *ngIf="movieService.movieList?.length">
     <div class="col-3" *ngFor="let m of movieService.movieList">
-        <img class="img-thumbnail" [src]="m.Poster" [alt]="m.Title">
+        <img 
+        (click)="selectMovie(m)"
+        [ngStyle]="{cursor: 'pointer'}"
+        class="img-thumbnail" [src]="m.Poster" [alt]="m.Title">
+    </div>
+    <div class="col-3 d-grid gap-2">
+        <button (click)="previousPage()" class="btn btn-primary"
+        [disabled]="movieService.pageNum===1"
+        >Previous</button>
+    </div>
+    <div class="col-3 d-grid gap-2">
+        <button (click)="nextPage()" 
+        [disabled]="movieService.pageNum===ceil(movieService.totalResults/10)"
+        class="btn btn-primary">Next</button>
     </div>
 </div>

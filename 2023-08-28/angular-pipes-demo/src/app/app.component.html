@@ -1,0 +1,42 @@
+<h1>Angular PIPE demo</h1>
+<hr>
+
+<p>there are {{customers.length}} customers</p>
+
+<button [disabled]="startIndex===0" (click)="previousPage()">Previous</button>
+<button [disabled]="endIndex>=(customers.length)" (click)="nextPage()">Next</button>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of (customers | slice: startIndex : endIndex)">
+            <td>{{ c.id }}</td>
+            <td>{{ c.first_name }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.birth_date }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Author information</p>
+<p>Name: {{ authorName | titlecase }}</p>
+<p>Name: {{ authorName | uppercase }}</p>
+<p>Email: {{ authorEmail | lowercase }}</p>
+
+<p>Book information</p>
+<p>{{ book | json }}</p>
+
+<p>The book "{{ book.title }}"
+    costs {{ book.price | currency : 'INR' }} </p>
+
+<p>author's firstname is {{ authorName | slice: 0: 5 }}</p>
+
+<p>square of {{num}} is {{ num | power }}</p>
+<p>cube of {{num}} is {{ num | power: 3 }}</p>
+<p>{{num}} raised to the power of 12 is {{ num | power: 12 }}</p>

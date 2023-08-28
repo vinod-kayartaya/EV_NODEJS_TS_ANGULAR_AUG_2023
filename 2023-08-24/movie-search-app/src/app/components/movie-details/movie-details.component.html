@@ -1,1 +1,37 @@
-<p>movie-details works!</p>
+<div *ngIf="movieService.selectedMovie.imdbID" class="row">
+    <div class="col-6">
+        <img 
+        
+        [src]="movieService.selectedMovie.Poster" [alt]="movieService.selectedMovie.Title" class="img-thumbnail">
+    </div>
+    <div class="col-6">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Plot</td>
+                    <td>{{movieService.selectedMovie.Plot}}</td>
+                </tr>
+                <tr>
+                    <td>Runtime</td>
+                    <td>{{movieService.selectedMovie.Runtime}}</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>{{movieService.selectedMovie.Year}}</td>
+                </tr>
+                <tr>
+                    <td>Genre</td>
+                    <td>{{movieService.selectedMovie.Genre}}</td>
+                </tr>
+                <tr>
+                    <td>Actors</td>
+                    <td>{{movieService.selectedMovie.Actors}}</td>
+                </tr>
+                <tr>
+                    <td>Director</td>
+                    <td>{{movieService.selectedMovie.Director}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
