@@ -1,0 +1,24 @@
+<div style="max-width: 125px; margin: 0 auto" >
+    <div *ngIf="!quantity" class="text-center">
+        <button class="btn btn-primary" (click)="addToCart()">
+            Add <i class="bi bi-basket"></i>
+        </button>
+    </div>
+    
+    <div *ngIf="quantity">
+    
+        <div class="row text-center">
+            <div class="col">
+                <button (click)="decrementQuantity()" class="btn btn-primary"> - </button>
+            </div>
+            <div class="col">
+                {{ quantity }}
+            </div>
+            <div class="col">
+                <button (click)="addToCart()" class="btn btn-primary"> + </button>
+            </div>
+        </div>
+    
+    </div>
+
+</div>

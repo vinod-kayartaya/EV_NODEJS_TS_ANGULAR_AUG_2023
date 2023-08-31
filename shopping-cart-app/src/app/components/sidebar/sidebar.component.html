@@ -1,0 +1,13 @@
+<h5>Browse by brand</h5>
+<ul class="list-group">
+    <li [routerLink]="['/']" [queryParams]="{brand:b}" class="list-group-item mouse-pointer" *ngFor="let b of brands">
+        {{ b | titlecase}}
+    </li>
+</ul>
+
+<h5>Browse by category</h5>
+<ul class="list-group">
+    <li [routerLink]="['/']" [queryParams]="{category:c}" class="list-group-item mouse-pointer" *ngFor="let c of categories">
+        {{ c | titlecase}}
+    </li>
+</ul>

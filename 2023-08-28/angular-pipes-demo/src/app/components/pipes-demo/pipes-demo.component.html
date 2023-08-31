@@ -1,0 +1,20 @@
+<div>
+    <h3>Product details</h3>
+    <p>Short name: {{ productName | firstWord }} </p>
+    <p>Long name: {{ productName | titlecase }} </p>
+    <p>Price: {{ unitPrice | currency : 'INR' }} </p>
+
+    <p>{{ 'Vinod Kumar Kayartaya' | firstWord }}</p>
+    <p>{{ 'Vinod Kumar Kayartaya' | reverse }}</p>
+    <p>{{ productName | reverse }}</p>
+
+    <p>{{ customer.first_name }} is born on 
+        {{ customer.birth_date | date : 'short'}} </p>
+    <p>{{ customer.first_name }} is born on 
+        {{ customer.birth_date | date : 'medium'}} </p>
+    <p>{{ customer.first_name }} is born on 
+        {{ customer.birth_date | date : 'long'}} </p>
+    <p>{{ customer.first_name }} is born on 
+        {{ customer.birth_date | date : 'full'}} </p>
+    <p>The date/time right now is {{ now | date : 'dd/MM/yyyy hh:mm:ss a' }} </p>
+</div>

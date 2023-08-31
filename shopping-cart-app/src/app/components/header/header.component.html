@@ -1,0 +1,23 @@
+<div class="alert alert-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>
+                    <span routerLink="/" class="mouse-pointer">
+                        <i class="bi bi-shop"></i>
+                        &nbsp;
+                        <em>e</em>Shoppe</span>
+                </h1>
+            </div>
+            <div class="col text-end">
+                <span class="lead">Hello, friend!</span>
+                &nbsp;
+                <i routerLink="/view-cart" class="mouse-pointer lead bi bi-cart2"></i>
+                <sup class="text-danger" *ngIf="cartService.itemCount">
+                    <!-- display the cart itemCount -->
+                    {{ cartService.itemCount }}
+                </sup>
+            </div>
+        </div>
+    </div>
+</div>

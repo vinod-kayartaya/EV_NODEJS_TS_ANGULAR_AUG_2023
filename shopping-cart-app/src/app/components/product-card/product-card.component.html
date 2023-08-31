@@ -1,0 +1,18 @@
+<div class="card">
+    <img [src]="'http://localhost:8080'+product.picture" class="card-img-top"
+        [alt]="product.description"
+        [title]="product.description"
+        [routerLink]="['/product-details', product.id]">
+    <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.quantity_per_unit }}</p>
+        <p class="card-text">
+            <del>{{ product.unit_price | currency : 'INR' }}</del>
+            <span class="lead">
+                {{ product.unit_price * (100-product.discount)/100 | currency: 'INR'}}
+            </span>
+        </p>
+        <app-add-to-cart-button
+            [product]="product"></app-add-to-cart-button>
+    </div>
+</div>
