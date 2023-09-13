@@ -10,13 +10,24 @@
                 </h1>
             </div>
             <div class="col text-end">
-                <span class="lead">Hello, friend!</span>
-                &nbsp;
-                <i routerLink="/view-cart" class="mouse-pointer lead bi bi-cart2"></i>
-                <sup class="text-danger" *ngIf="cartService.itemCount">
-                    <!-- display the cart itemCount -->
-                    {{ cartService.itemCount }}
-                </sup>
+               <div>
+                    <span *ngIf="!userService.loggedInUser" class="lead">Hello, friend!</span>
+                    <span *ngIf="userService.loggedInUser" class="lead">Hello, {{userService.loggedInUser.name}}!</span>
+                    &nbsp;
+                    <i routerLink="/view-cart" class="mouse-pointer lead bi bi-cart2"></i>
+                    <sup class="text-danger" *ngIf="cartService.itemCount">
+                        <!-- display the cart itemCount -->
+                        {{ cartService.itemCount }}
+                    </sup>
+               </div>
+
+               <div>
+                    <button routerLink="/login" *ngIf="!userService.loggedInUser" class="btn btn-link">Login</button>
+                    <button routerLink="/register" *ngIf="!userService.loggedInUser" class="btn btn-link">Register</button>
+
+                    <button routerLink="/dashboard" *ngIf="userService.loggedInUser" class="btn btn-link">Dashboard</button>
+                    <button (click)="userService.logout()" *ngIf="userService.loggedInUser" class="btn btn-link">Logout</button>
+               </div>
             </div>
         </div>
     </div>

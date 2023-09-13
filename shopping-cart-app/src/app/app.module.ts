@@ -13,6 +13,9 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ViewCartComponent } from './components/view-cart/view-cart.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AddToCartButtonComponent } from './components/add-to-cart-button/add-to-cart-button.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 // route configuration; can be imported from another file as well
 const routesConfig: Routes = [
@@ -28,6 +31,14 @@ const routesConfig: Routes = [
   {
     path: 'view-cart',
     component: ViewCartComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
   {
     path: '**',
@@ -47,10 +58,13 @@ const routesConfig: Routes = [
     ViewCartComponent,
     PageNotFoundComponent,
     AddToCartButtonComponent,
+    LoginComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule, // @angular/forms
     RouterModule.forRoot(routesConfig),
   ],
   providers: [],

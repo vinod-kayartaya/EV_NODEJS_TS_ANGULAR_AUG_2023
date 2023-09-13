@@ -1,0 +1,22 @@
+POST /login
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{"email":"ramesh@example.com","password":"123123123"}
+
+###
+
+GET /orders
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6IlJhbWVzaCBLdW1hciIsImlhdCI6MTY5MzU0MzQ5M30.yuul3egnhztSWgmbGNu4M94pUXLACQC4P_onGEmYzvs
+
+###
+
+GET /customers
+Host: localhost:8080
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6IlJhbWVzaCBLdW1hciIsImlhdCI6MTY5MzU0MzQ5M30.yuul3egnhztSWgmbGNu4M94pUXLACQC4P_onGEmYzvs
